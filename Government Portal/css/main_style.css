@@ -1,0 +1,48 @@
+body{
+    background-color: whitesmoke;
+    margin: 0px;
+    padding: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.left-sidebar{
+    background-color: whitesmoke;
+} 
+.side-nav-ele{
+    height: 100%;
+}
+
+.top-bar{
+    /* background-color: #fff; */
+}
+@media (max-width: 750px) {
+    .left-sidebar{
+        display: none;
+    } 
+    .main-dashboard{
+        margin: 10px;
+    }    
+    .desktop-top-nav{
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
