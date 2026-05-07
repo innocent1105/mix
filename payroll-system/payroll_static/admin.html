@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <nav class="bg-blue-600 shadow-md">
+        <div class=" fixed top-0 w-full left-0 right-0 bg-blue-600  p-4 mx-auto flex items-center justify-between">
+            <a href="index.html" class="text-white text-2xl font-semibold">EMS</a>
+            <div class="flex items-center space-x-4">
+            
+            </div>
+        </div>
+    </nav>
+    <title>Admin Dashboard | EMS</title>
+</head>
+<body class="min-h-screen bg-gray-100">
+    <div class="p-6 mt-24 bg-white shadow-md">
+        <div class="flex items-center justify-between">
+            <h1 class="text-2xl font-bold">Admin dashboard</h1>
+            <a href="../logout.php" class="px-4 py-2 text-sm font-semibold text-white bg-red-600 rounded hover:bg-red-700">Logout</a>
+        </div>
+        <hr class="my-4">
+
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div class="p-6 bg-blue-100 rounded shadow">
+                <h2 class="text-lg font-semibold">Register New User</h2>
+                <p class="mt-2 text-sm text-gray-700">Create accounts for employees or other admins.</p>
+                <a href="register.html" class="inline-block mt-4 text-blue-700 hover:underline">Go to Register</a>
+            </div>
+
+            <div class="p-6 bg-green-100 rounded shadow">
+                <h2 class="text-lg font-semibold">Attendance Management</h2>
+                <p class="mt-2 text-sm text-gray-700">Track sign-in/sign-out, view logs, export data.</p>
+                <a href="attendance_logs.html" class="inline-block mt-4 text-green-700 hover:underline">View Logs</a>
+            </div>
+
+            <div class="p-6 bg-yellow-100 rounded shadow">
+                <h2 class="text-lg font-semibold">Payroll</h2>
+                <p class="mt-2 text-sm text-gray-700">Calculate pay based on hours worked.</p>
+                <a href="payroll.html" class="inline-block mt-4 text-blue-700 hover:underline">View Payroll</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

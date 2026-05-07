@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register User | EMS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- header.php -->
+    <nav class="bg-blue-600 shadow-md">
+        <div class=" fixed top-0 w-full left-0 right-0 bg-blue-600  p-4 mx-auto flex items-center justify-between">
+            <a href="index.html" class="text-white text-2xl font-semibold">EMS</a>
+            <div class="flex items-center space-x-4">
+            
+            </div>
+        </div>
+    </nav>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="w-full max-w-md p-8 bg-white rounded-lg shadow">
+        <h2 class="mb-6 text-2xl font-bold text-center">Register New User</h2>
+        <form method="POST" class="space-y-4">
+            <div>
+                <label class="block mb-1 text-sm font-medium">Full Name</label>
+                <input type="text" name="full_name" required class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+                <label class="block mb-1 text-sm font-medium">Email</label>
+                <input type="email" name="email" required class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+                <label class="block mb-1 text-sm font-medium">Password</label>
+                <input type="password" name="password" required class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+                <label class="block mb-1 text-sm font-medium">Role</label>
+                <select name="role" class="w-full px-4 py-2 border rounded">
+                    <option value="employee">Employee</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+            <div>
+                <label class="block mb-1 text-sm font-medium">Hourly Rate</label>
+                <input type="number" name="hourly_rate" required step="0.01" min="0" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <button type="submit" class="w-full px-4 py-2 font-semibold text-white bg-green-600 rounded hover:bg-green-700">Register</button>
+        </form>
+    </div>
+</body>
+</html>

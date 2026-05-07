@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>EMS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- header.php -->
+    <nav class="bg-blue-600 shadow-md">
+        <div class=" fixed top-0 w-full left-0 right-0 bg-blue-600  p-4 mx-auto flex items-center justify-between">
+            <a href="index.html" class="text-white text-2xl font-semibold">EMS</a>
+            <div class="flex items-center space-x-4">
+            
+            </div>
+        </div>
+    </nav>
+</head>
+<body class="min-h-screen bg-gray-100">
+    <div class="p-6">
+        <div class="flex items-center justify-between">
+            <h1 class="text-2xl font-bold">Employee attendance</h1>
+            <a href="admin.php" class="px-4 py-2 text-sm text-white bg-blue-600 rounded hover:bg-blue-700">← Back to Dashboard</a>
+        </div>
+        <hr class="my-4">
+
+        <div class="overflow-x-auto bg-white rounded shadow">
+            <table class="min-w-full text-sm table-auto">
+                <thead class="bg-gray-100 text-gray-700">
+                    <tr>
+                        <th class="px-4 py-2 text-center">Employee</th>
+                        <th class="px-4 py-2 text-center">Date</th>
+                        <th class="px-4 py-2 text-center">Sign In</th>
+                        <th class="px-4 py-2 text-center">Sign Out</th>
+                        <th class="px-4 py-2 text-center">Hours Worked</th>
+                        <th class="px-4 py-2 text-center">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  
+                    <tr class="border-b">
+                        <td class="px-4 py-2 text-center">Mulenga M </td>
+                        <td class="px-4 py-2 text-center">2025-05-01</td>
+                        <td class="px-4 py-2 text-center">08:30:03</td>
+                        <td class="px-4 py-2 text-center">12:30:12</td>
+                        <td class="px-4 py-2 text-center">
+                            4hr
+                        </td>
+                        <td class="px-4 py-2 text-center ">
+                            <span class="px-2 py-1 text-xs font-semibold text-white rounded bg-green-600 ">
+                                signed out
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
