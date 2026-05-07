@@ -1,0 +1,253 @@
+<?php
+require 'db.php'; // Your DB connection file
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $first_name = htmlspecialchars($_POST['first_name']);
+    $last_name = htmlspecialchars($_POST['last_name']);
+    $email = htmlspecialchars($_POST['email']);
+    $phone = htmlspecialchars($_POST['phone_number']);
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+
+    $sql = "INSERT INTO users (first_name, last_name, email, phone_number, password)
+            VALUES (?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('sssss', $first_name, $last_name, $email, $phone, $password);
+
+    if ($stmt->execute()) {
+        header("Location: ./login.php");
+        exit;
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Immigration Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <link rel="stylesheet" href="./css/tailwind.css">
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobile-menu");
+      menu.classList.toggle("hidden");
+    }
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .hr-txt{
+      font-size: 90px;
+      border-radius: 50%;
+      background: none;
+      /* box-shadow: 20px 70px 100px #ff9800; */
+      text-shadow:  10px 20px 130px #ff9800;
+      /* animation: t-shadow 3s ease-in-out 0s infinite; */
+    }
+    .long-txt{
+      border-radius: 100%;
+      background: none;
+      box-sizing: border-box;
+      /* box-shadow: 20px 70px 1000px #ff9800; */
+      text-shadow:  10px 20px 100px #ff9800;
+      /* animation: t-shadow 8s ease-in-out 0s infinite; */
+    }
+
+    @keyframes t-shadow {
+      0%{
+        text-shadow:  20px 20px 120px #ff9800;
+      }
+      50%{
+        text-shadow:  20px 38px 130px #ff9800;
+      }
+      100%{
+        text-shadow:  49px 20px 150px #ff9800;
+      }
+    }
+
+    @media (max-width: 750px) {
+      .hr-txt{
+        font-size: 24px;
+      }
+    }
+  </style>
+
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+  <header class="bg-gray-800 shadow-md fixed top-0 left-0 right-0 w-full z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="logo flex justify-between gap-4">
+            <img src="./img/logo_prev_ui (1).png" class=" md:w-11 md:h-10 w-5 h-4" alt="">
+            <h1 class="md:text-2xl font-bold text-sm text-yellow-400">Immigration Services Of Zambia</h1>
+        </div>
+      <div class="md:hidden">
+        <button onclick="toggleMenu()" class="text-white focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#services" class="text-sm py-2 text-white hover:text-yellow-400">Services</a>
+        <a href="#process" class="text-sm py-2 text-white hover:text-yellow-400">Process</a>
+        <a href="#contact" class="text-sm py-2 text-white hover:text-yellow-400">Contact</a>
+        <a href="./login.php" class="text-sm py-2 text-yellow-300 hover:text-yellow-400">Login</a>
+        <!-- <button class="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 te
+        xt-sm">Apply Now</button> -->
+      </nav>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden px-6 pb-4">
+      <nav class="flex flex-col space-y-3">
+        <a href="#services" class="text-sm text-white hover:text-yellow-400">Services</a>
+        <a href="#process" class="text-sm text-white hover:text-yellow-400">Process</a>
+        <a href="#contact" class="text-sm text-white hover:text-yellow-400">Contact</a>
+        <button class="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-yellow-600 text-sm">Apply Now</button>
+      </nav>
+    </div>
+  </header>
+
+    <section class="relative w-full bg-cover bg-center bg-no-repeat text-center py-48 pt-60 md:pt-48" style="background-image: url('./provinces/flag.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-yellow-300 mb-4">The Immigration Department</h2>
+            <p class="text-gray-200 text-base sm:text-lg mb-6">Your trusted partner in international relocation and visa services.</p>
+            
+            
+
+
+
+            
+        <center>
+            <div class=" md:w-72 bg-white p-4 rounded-md ">
+                <h2 class="text-2xl text-gray-700 font-bold mb-4">Register</h2>
+                <form action="" method="POST" class="space-y-4">
+                    <input type="text" name="first_name" placeholder="First Name" required class="w-full border text-green-700  p-2 rounded">
+                    <input type="text" name="last_name" placeholder="Last Name" required class="w-full text-green-700  border p-2 rounded">
+                    <input type="email" name="email" placeholder="Email" required class="w-full border text-green-700  p-2 rounded">
+                    <input type="text" name="phone_number" placeholder="Phone Number" class="w-full text-green-700  border p-2 rounded">
+                    <select name="acc-role" id="role" class="w-full border text-green-700 cursor-pointer p-2 rounded">
+                      <option value="Staff">Staff</option>
+                      <option value="Consultant">Consultant</option>
+                      <option value="Client">Client</option>
+                    </select>
+                    <input type="password" name="password" placeholder="Password" required class="w-full text-green-700  border p-2 rounded">
+                    <button type="submit" class="w-full bg-gray-900 text-white p-2 rounded hover:bg-gray-700">Register</button>
+                    <p class="text-sm text-gray-500 text-center">Already registered? <a href="login.php" class="text-yellow-600">Login</a></p>
+                </form>
+            </div>
+        </center>
+        
+
+
+        </div>
+    </section> 
+
+ <!-- <section id="services" class="services py-16  bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h3 class="text-3xl sm:text-4xl font-bold mb-10 text-yellow-300">Our Services</h3>
+      <div class="flex flex-col md:flex-row justify-center gap-8">
+        
+        <div class="p-6 bg-gray-800 rounded-xl shadow hover:shadow-lg transition w-full md:w-1/2">
+          <h4 class="text-xl font-semibold mb-2 text-white">International Applications</h4>
+          <p class="text-sm text-gray-400">
+            Apply for Immigration wherever you are by submitting your respected details of residence, nationality, and more.
+          </p>
+        </div>
+  
+        <div class="p-6 bg-gray-800 rounded-xl shadow hover:shadow-lg transition w-full md:w-1/2">
+          <h4 class="text-xl font-semibold mb-2 text-white">Permanent Residency</h4>
+          <p class="text-sm text-gray-400">
+            Full assistance with PR applications, interviews, and follow-ups.
+          </p>
+        </div>
+  
+      </div>
+    </div>
+  </section> -->
+  
+
+ <section id="process" class="py-16 bg-gray-800">
+    <div class="container mx-auto px-6 text-center">
+      <h3 class="text-3xl font-bold mb-10 text-yellow-300">How It Works</h3>
+      <div class="flex flex-col md:flex-row justify-center gap-12">
+        <div class="flex-1">
+          <div class="text-yellow-400 text-4xl font-bold mb-2">1</div>
+          <h4 class="font-semibold text-lg text-white">Consultation</h4>
+          <p class="text-sm text-gray-400 mt-2">Free eligibility check & expert advice.</p>
+        </div>
+        <div class="flex-1">
+          <div class="text-yellow-400 text-4xl font-bold mb-2">2</div>
+          <h4 class="font-semibold text-lg text-white">Documentation</h4>
+          <p class="text-sm text-gray-400 mt-2">We handle all paperwork and requirements.</p>
+        </div>
+        <div class="flex-1">
+          <div class="text-yellow-400 text-4xl font-bold mb-2">3</div>
+          <h4 class="font-semibold text-lg text-white">Approval</h4>
+          <p class="text-sm text-gray-400 mt-2">Online immigration application processing & final steps completed smoothly.</p>
+        </div>
+      </div>
+    </div>
+  </section> 
+
+
+  <section id="process" class="md:py-16 py-8 md:mx-24 md:my-8 my-4 md:flex md:justify-cennter md:gap-10">
+      <div class=" hr-txt md:px-48 px-4 font-semibold text-slate-700">
+        <span class=" text-yellow-500">Human</span>  <br class=" hidden md:block"> Rights
+      </div>
+    
+      <div class="long-txt text-gray-300 md:text-lg text-sm md:py-14 py-4 md:px-24 px-4 md:text-center h-auto">
+        Promote a Human Rights based approach and culture in 
+        respect of the migration control. 
+        Ensure the dignity, safety, and freedom of all migrants are upheld, 
+        with policies rooted in compassion, equality, and justice. 
+        Advocate for inclusive systems that protect vulnerable individuals 
+        and prioritize humanitarian values over political interests.
+    </div>
+
+  </section>
+
+
+
+
+
+
+  <section id="contact" class="contact-section py-16 bg-gray-900">
+    <div class="container mx-auto px-6 text-center">
+      <h3 class="text-3xl font-bold mb-4 text-yellow-300">Get in Touch</h3>
+      <p class="text-gray-400 mb-8">Ready to move? Fill out the form and we'll reach out.</p>
+      <form class="max-w-xl mx-auto space-y-4">
+        <input type="text" placeholder="Full Name"
+          class="w-full p-3 border border-gray-700 rounded-md bg-gray-800 text-white" required>
+        <input type="email" placeholder="Email Address"
+          class="w-full p-3 border border-gray-700 rounded-md bg-gray-800 text-white" required>
+        <textarea placeholder="Your Message"
+          class="w-full p-3 resize-none border border-gray-700 rounded-md bg-gray-800 text-white" rows="4" required></textarea>
+        <button type="submit"
+          class="bg-yellow-500 text-white px-6 py-3 rounded-full hover:bg-yellow-600">Send Message</button>
+      </form>
+    </div>
+  </section> 
+
+ <footer class="bg-gray-800 text-gray-400 text-center py-4">
+    <p>&copy; 2025 Immigration. All rights reserved.</p>
+  </footer> 
+
+</body>
+</html>
+
+
+<?php
+$content = ob_get_clean();
+$title = "Login";
+// include 'layout.php';
+?>
+
+
+

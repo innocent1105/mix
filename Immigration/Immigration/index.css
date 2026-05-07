@@ -1,0 +1,277 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.hq-container{
+   top: 12px;
+   justify-content: center;
+   text-align: center;
+   display: block;
+   background-image: url(img/logo.jpg);
+   background-position:center ;
+   background-size: contain;
+
+  /* background-color: rgb(31, 54, 8);*/
+   height: 120px;
+   width: 200px;
+   padding-top: 75px;
+   padding-left: 50px;
+   padding-right: 50px;
+   padding-bottom: 75px;
+   left: 40%;
+   position: absolute;
+   border-radius: 100%;
+   
+}
+.hq-container a{
+    
+    position: relative;
+    text-decoration: none;
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    z-index: 900;
+    
+
+}
+
+.head-container{
+    background-color: #3c3232;
+    height:400px;
+    width: 100vw;
+    position: relative;
+    margin-top: 0px;
+}
+
+.head-container .hq-container{
+    top: 50px;
+
+}
+
+h1{
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    position: relative;
+    top:250px ;
+}
+
+span{
+    color:#ffffff;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    position: relative;
+    top:270px;
+    font-size: 28px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+
+.nav-container{
+    width: 100%;
+    position: relative;
+    margin-top: 12px;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.nav-container nav{
+    padding-top: 12px;
+    position: relative;
+
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+}
+
+nav a{
+    text-decoration: none;
+    margin: 25px;
+    flex-wrap: nowrap;
+
+}
+
+button{
+
+    background-image: url(img/logo.jpg);
+    background-position:center ;
+    background-size: contain;
+    /* background-color: rgb(32, 5, 57);*/
+    height: 70px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 100%;
+    color: #ffffff;
+    padding-top: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+
+
+    /*background-color: rgb(32, 5, 57);*/
+    /*border-radius:6px;*/
+    color: #ffffff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-style: none;
+
+}
+
+.hq{
+    color: chocolate;
+    border-radius: 100%;
+    padding-top:8px;
+
+}
+
+.hq:hover{
+    transform: scale(1.5);
+    color: blueviolet;
+
+}
+
+.dropdown:hover{
+    transform: scale(1.05);
+}
+
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+
+.dropdown-content{
+    z-index: 900;
+}
+
+
+
+.dropdown{
+    margin-left: 2px;
+    height: max-content;
+  
+}
+
+.dropdown a{
+    display: flex;
+    flex-direction: row;
+   color: #ffffff;
+}
+
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: rgb(247, 247, 253);
+    z-index: 900;
+    
+}
+
+.dropdown-content a{
+    color:black;
+}
+
+.dropdown{
+    position: relative;
+    left: 30%;
+    margin: 5px;  
+}
+
+@media only screen and (max-width: 600px) {
+    .nav-container{
+        display: flex;
+    
+    }
+
+    button{
+        margin-top: 12px;
+        background-image: url(img/logo.jpg);
+        background-position:center ;
+        background-size: contain;
+        /* background-color: rgb(32, 5, 57);*/
+        height: 50px;
+        width: 80px;
+        object-fit: cover;
+        border-radius: 100%;
+        color: #ffffff;
+        padding-top: 25px;
+        padding-left: 10px;
+        padding-right: 60px;
+        padding-bottom: 60px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        
+    
+    
+        background-color: rgb(32, 5, 57);
+        /*border-radius:6px;*/
+        color: #ffffff;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border-style: none;
+    
+    }
+
+    .head-container{
+       
+        height:400px;
+        width: 100%;
+        padding-left: 0px;
+        
+    }
+
+
+
+    .dropdown{
+        margin: 5px; 
+        left: 50px; 
+    }
+
+    .hq-container{
+       margin-top:0px;
+       left: 30%;
+       top: 0%;
+     }
+
+     .head-container{
+        padding-top: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        position: relative;
+        height: 450px;
+        width: 1000px;
+    }
+
+    .head-container .hq-container{
+        top: 2px;
+    
+    }
+
+    h1{
+       
+        top:200px ;
+    }
+
+    hq-container a{
+        font-size: 50px;
+    
+    }
+
+    body{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    
+}
+
+
+
+
+
+
+

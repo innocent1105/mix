@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Immigration Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobile-menu");
+      menu.classList.toggle("hidden");
+    }
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+  <header class="bg-gray-800 shadow-md fixed top-0 left-0 right-0 w-full z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="logo flex justify-between gap-4">
+            <img src="./img/logo_prev_ui (1).png" class=" md:w-11 md:h-10 w-5 h-4" alt="">
+            <h1 class="md:text-2xl font-bold text-sm text-green-400">Immigration Services Of Zambia</h1>
+        </div>
+      <div class="md:hidden">
+        <button onclick="toggleMenu()" class="text-white focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#services" class="text-sm py-2 text-white hover:text-green-400">Services</a>
+        <a href="#process" class="text-sm py-2 text-white hover:text-green-400">Process</a>
+        <a href="#contact" class="text-sm py-2 text-white hover:text-green-400">Contact</a>
+        <a href="#contact" class="text-sm py-2 text-green-300 hover:text-green-400">Register</a>
+        <button class="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 text-sm">Apply Now</button>
+      </nav>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden px-6 pb-4">
+      <nav class="flex flex-col space-y-3">
+        <a href="#services" class="text-sm text-white hover:text-green-400">Services</a>
+        <a href="#process" class="text-sm text-white hover:text-green-400">Process</a>
+        <a href="#contact" class="text-sm text-white hover:text-green-400">Contact</a>
+        <button class="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 text-sm">Apply Now</button>
+      </nav>
+    </div>
+  </header>
+
+    <section class="relative w-full bg-cover bg-center bg-no-repeat text-center py-48 pt-60 md:pt-48" style="background-image: url('./provinces/flag.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-green-300 mb-4">The Immigration Department</h2>
+            <p class="text-gray-200 text-base sm:text-lg mb-6">Your trusted partner in international relocation and visa services.</p>
+            <a href="#contact"
+            class="inline-block bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-600 transition">Start Now</a>
+        </div>
+    </section> 
+
+ <section id="services" class="services py-16 md:hidden bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h3 class="text-3xl sm:text-4xl font-bold mb-10 text-green-300">Our Services</h3>
+      <div class="flex flex-col md:flex-row justify-center gap-8">
+        
+        <div class="p-6 bg-gray-800 rounded-xl shadow hover:shadow-lg transition w-full md:w-1/2">
+          <h4 class="text-xl font-semibold mb-2 text-white">International Applications</h4>
+          <p class="text-sm text-gray-400">
+            Apply for Immigration wherever you are by submitting your respected details of residence, nationality, and more.
+          </p>
+        </div>
+  
+        <div class="p-6 bg-gray-800 rounded-xl shadow hover:shadow-lg transition w-full md:w-1/2">
+          <h4 class="text-xl font-semibold mb-2 text-white">Permanent Residency</h4>
+          <p class="text-sm text-gray-400">
+            Full assistance with PR applications, interviews, and follow-ups.
+          </p>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+
+ <section id="process" class="py-16 bg-gray-800">
+    <div class="container mx-auto px-6 text-center">
+      <h3 class="text-3xl font-bold mb-10 text-green-300">How It Works</h3>
+      <div class="flex flex-col md:flex-row justify-center gap-12">
+        <div class="flex-1">
+          <div class="text-green-400 text-4xl font-bold mb-2">1</div>
+          <h4 class="font-semibold text-lg text-white">Consultation</h4>
+          <p class="text-sm text-gray-400 mt-2">Free eligibility check & expert advice.</p>
+        </div>
+        <div class="flex-1">
+          <div class="text-green-400 text-4xl font-bold mb-2">2</div>
+          <h4 class="font-semibold text-lg text-white">Documentation</h4>
+          <p class="text-sm text-gray-400 mt-2">We handle all paperwork and requirements.</p>
+        </div>
+        <div class="flex-1">
+          <div class="text-green-400 text-4xl font-bold mb-2">3</div>
+          <h4 class="font-semibold text-lg text-white">Approval</h4>
+          <p class="text-sm text-gray-400 mt-2">Online immigration application processing & final steps completed smoothly.</p>
+        </div>
+      </div>
+    </div>
+  </section> 
+
+  <section id="contact" class="contact-section py-16 bg-gray-900">
+    <div class="container mx-auto px-6 text-center">
+      <h3 class="text-3xl font-bold mb-4 text-green-300">Get in Touch</h3>
+      <p class="text-gray-400 mb-8">Ready to move? Fill out the form and we'll reach out.</p>
+      <form class="max-w-xl mx-auto space-y-4">
+        <input type="text" placeholder="Full Name"
+          class="w-full p-3 border border-gray-700 rounded-md bg-gray-800 text-white" required>
+        <input type="email" placeholder="Email Address"
+          class="w-full p-3 border border-gray-700 rounded-md bg-gray-800 text-white" required>
+        <textarea placeholder="Your Message"
+          class="w-full p-3 resize-none border border-gray-700 rounded-md bg-gray-800 text-white" rows="4" required></textarea>
+        <button type="submit"
+          class="bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-600">Send Message</button>
+      </form>
+    </div>
+  </section> 
+
+ <footer class="bg-gray-800 text-gray-400 text-center py-4">
+    <p>&copy; 2025 Immigration. All rights reserved.</p>
+  </footer> 
+
+</body>
+</html>
