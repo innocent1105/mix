@@ -1,0 +1,16 @@
+{
+    "name": "cynite/ipay",
+    "description": "ipay-lenco",
+    "authors": [
+        {
+            "name": "innocent1105",
+            "email": "157174831+innocent1105@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "beta",
+    "prefer-stable": true,
+    "require": {
+        "guzzlehttp/guzzle": "^7.10",
+        "alexasomba/lenco-php": "dev-main"
+    }
+}
